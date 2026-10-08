@@ -34,6 +34,10 @@ public class LunchTime {
      */
     public LunchTime() {
         // TODO: Initialize all four instance variables.
+        numNugs = 5;
+        mysterySauce = 6.7;
+        enoughNugs = true;
+        entreeName = "Bad Nuggets";
     }
 
 
@@ -42,6 +46,10 @@ public class LunchTime {
      */
     public LunchTime(int nugs, double sauce, boolean enough, String name) {
         // TODO: Set all four instance variables using the parameters.
+        numNugs = nugs;
+        mysterySauce = sauce;
+        enoughNugs = enough;
+        entreeName = name;
     }
 
 
@@ -59,7 +67,7 @@ public class LunchTime {
      */
     public int getEntreeNameLength() {
         // TODO
-        return 0;
+        return entreeName.length();
     }
 
 
@@ -79,7 +87,7 @@ public class LunchTime {
      */
     public String getEntreeSubstring(int start, int end) {
         // TODO
-        return "";
+        return entreeName.substring(start, end);
     }
 
 
@@ -95,7 +103,7 @@ public class LunchTime {
      */
     public int containsNug() {
         // TODO
-        return 0;
+        return entreeName.indexOf("Nug");
     }
 
 
@@ -112,7 +120,7 @@ public class LunchTime {
      */
     public int compareLunchNames(String otherLunch) {
         // TODO
-        return 0;
+        return entreeName.compareTo(otherLunch);
     }
 
 
@@ -127,7 +135,7 @@ public class LunchTime {
      */
     public boolean isSameLunch(String otherLunch) {
         // TODO
-        return false;
+        return entreeName.equals(otherLunch);
     }
 
 
@@ -155,7 +163,7 @@ public class LunchTime {
        */
       public int cafeteriaRandomness(int lowNugs, int highNugs) {
           // TODO: return a random integer from lowNugs through highNugs
-          return 0;
+          return (int) (Math.random() * (highNugs - lowNugs + 1)) + lowNugs;
       }
 
 
@@ -169,7 +177,7 @@ public class LunchTime {
      */
     public double nuggetPower(double power) {
         // TODO
-        return 0.0;
+        return Math.pow(numNugs, power);
     }
 
     /**
@@ -289,12 +297,12 @@ public class LunchTime {
 
         // TODO:
         // Create a LunchTime object using the no-argument constructor.
-
-
+        LunchTime Lunch1 = new LunchTime();
         // TODO:
         // Create another LunchTime object using the constructor
         // with parameters.
         //
+        LunchTime Lunch2 = new LunchTime(7, 67.0, true, "lunch");
         // Feel free to invent an appropriately terrible cafeteria
         // entree name.
 
@@ -303,8 +311,14 @@ public class LunchTime {
         // Call EVERY non-challenge method at least once.
         //
         // Print the results so you can verify that your methods work.
-
-
+        System.out.println(Lunch2.getEntreeSubstring(1, 2));
+        System.out.println(Lunch2.getEntreeNameLength());
+        System.out.println(Lunch2.containsNug());
+        System.out.println(Lunch2.compareLunchNames(Lunch1.entreeName));
+        System.out.println(Lunch2.isSameLunch(Lunch1.entreeName));
+        System.out.println(Lunch2.cafeteriaRandomness(5, 10));
+        System.out.println(Lunch2.nuggetPower(6));
+        System.out.println(Lunch2.gotEnoughNugs());
         // OPTIONAL:
         // Attempt the four challenges if you are feeling powerful.
 
