@@ -223,8 +223,14 @@ public class LunchTime {
      * ASCII values and casting to (char) might be useful.
      */
     public String secretLunchCode(int codeLength) {
-        // TODO
-        return "";
+        String code = null;
+        code = Character.toString((char) ((Math.random() * (122-97+1))+97));
+        codeLength--;
+        while (codeLength > 0) {
+        code = code + (char) ((Math.random() * (122-97+1))+97);
+        codeLength--;
+        }
+        return code;
     }
 
 
@@ -257,7 +263,7 @@ public class LunchTime {
      */
     public double sauceCatastrophe(double saucePower, double nugPower) {
         // TODO
-        return 0.0;
+        return Math.abs(Math.pow(mysterySauce, saucePower) - Math.pow(numNugs, nugPower));
     }
 
 
@@ -285,7 +291,7 @@ public class LunchTime {
     public double distanceToNuggets(double studentX, double studentY,
                                     double nugX, double nugY) {
         // TODO
-        return 0.0;
+        return Math.sqrt(Math.pow((nugX - studentX), 2)+Math.pow((nugY - studentY), 2));
     }
 
 
@@ -319,6 +325,10 @@ public class LunchTime {
         System.out.println(Lunch2.cafeteriaRandomness(5, 10));
         System.out.println(Lunch2.nuggetPower(6));
         System.out.println(Lunch2.gotEnoughNugs());
+        System.out.println(Lunch2.secretLunchCode(20));
+        System.out.println(Lunch2.sauceCatastrophe(4, 6));
+        System.out.println(Lunch2.distanceToNuggets(4.0, 6, 9.0, 7.0));
+        
         // OPTIONAL:
         // Attempt the four challenges if you are feeling powerful.
 
